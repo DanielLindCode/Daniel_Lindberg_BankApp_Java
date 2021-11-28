@@ -55,9 +55,9 @@ public class Customer {
 
     }
     // -Saldo
-    public long withdrawsetsaldo(long accountnumber, int wSaldo) {
+    public long withdrawsetsaldo(long accountNr, int wSaldo) {
         for (var account : accounts) {
-            if (accountnumber == account.getAccountNumber() && wSaldo <= account.getSaldo())
+            if (accountNr == account.getAccountNumber() && wSaldo <= account.getSaldo())
             {
                 int oldSaldo = account.getSaldo();
                 int newSaldo = oldSaldo - wSaldo;
@@ -65,11 +65,11 @@ public class Customer {
                 return newSaldo;
             }
         }
-        return accountnumber;
+        return accountNr;
     }
 
     // Hittar konto baserat på kontoNr
-    public Account findAccount(Long accountNr) {
+    public Account getAccount(Long accountNr) {
 
         for (int i = 0; i < accounts.size(); i++) {
 

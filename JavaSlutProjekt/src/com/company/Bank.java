@@ -179,12 +179,12 @@ public class Bank {
     }
 
     // Stänger ett konto
-    public String closeAccount(long pNr, long accountNumber) {
+    public String closeAccount(long pNr, long accountNr) {
 
         int targetIndexNr = findCustomer(pNr);
         if (targetIndexNr == -1) { return "Cant find account"; }
 
-        int saldoBack = customers.get(targetIndexNr).findAccount(accountNumber).getSaldo();
+        int saldoBack = customers.get(targetIndexNr).getAccount(accountNr).getSaldo();
 
         customers.get(targetIndexNr).getAccounts().remove(targetIndexNr);
 
